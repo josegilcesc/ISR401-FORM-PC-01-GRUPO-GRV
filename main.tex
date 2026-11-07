@@ -40,7 +40,7 @@
 	\maketitle
 	
 	\begin{abstract}
-		En este informe se formaliza el avance inicial de la actividad grupal \texttt{FORM-PC-01}, cuyo objetivo es comparar los modelos de proceso de ingeniería de requisitos (cascada/secuencial, iterativo/incremental y ágil/Scrum) en cuatro escenarios representativos del entorno profesional. Se establecen cinco criterios formales de selección basados en el dominio del problema y la estabilidad de requisitos.
+		En este informe se formaliza el desarrollo de la actividad grupal \texttt{FORM-PC-01}, cuyo objetivo es comparar los modelos de proceso de ingeniería de requisitos (cascada/secuencial, iterativo/incremental y ágil/Scrum) en cuatro escenarios representativos del entorno profesional. Se definen cinco criterios cuantitativos y cualitativos de selección y se presenta la matriz comparativa correspondiente.
 	\end{abstract}
 	
 	\section{Criterios de Comparación de Modelos de Proceso}
@@ -53,6 +53,28 @@
 		\item \textbf{C4. Rigidez contractual y regulatoria:} Determina la presencia de marcos legales, leyes nacionales (como la LOPDP \cite{lopdp2021}), plazos fijos de contratación pública o normativas institucionales que imponen un alcance cerrado antes del inicio del desarrollo.
 		\item \textbf{C5. Tiempo para el primer incremento funcional (\emph{Time-to-Market}):} Mide la urgencia del negocio por desplegar una versión operativa en producción para capturar usuarios, validar modelo comercial o mitigar riesgos de mercado.
 	\end{enumerate}
+	
+	\section{Matriz Comparativa de Escenarios y Modelos}
+	Se evalúan los cuatro escenarios del caso frente a los tres modelos principales de proceso de requisitos.
+	
+	\begin{center}
+		\centering
+		\scriptsize
+		\setlength{\tabcolsep}{3pt}
+		\begin{tabularx}{\textwidth}{@{}p{2.6cm} Y p{1.8cm} p{1.8cm} p{1.8cm} p{2.2cm}@{}}
+			\toprule
+			\textbf{Escenario Evaluado} & \textbf{Características del Entorno} & \textbf{Modelo Cascada (Secuencial)} & \textbf{Modelo Iterativo / Incremental} & \textbf{Modelo Ágil (Scrum)} & \textbf{Modelo Seleccionado}\\
+			\midrule
+			\textbf{Escenario 1:} Sistema embebido de planta industrial. & Alta criticidad de hardware, tolerancia cero a fallos, requisitos de control físico estables. & \textbf{Alta} (Fase de requisitos cerrada antes de fabricar). & Media (Limitada por despliegue físico). & Baja (Dificultad de refactorizar firmware físico). & \textbf{Modelo Cascada (Secuencial)} \\
+			\addlinespace[3pt]
+			\textbf{Escenario 2:} Aplicación móvil de emprendimiento. & Requisitos altamente volátiles, necesidad de probar mercado móvil e iterar rápido. & Baja (Riesgo de obsolescencia antes de lanzar). & Media (Ciclos largos para startups). & \textbf{Alta} (Sprints rápidos con retroalimentación). & \textbf{Modelo Ágil (Scrum)} \\
+			\addlinespace[3pt]
+			\textbf{Escenario 3:} Sistema de un GAD con contrato público. & Alcance legalmente cerrado por plazos, pero alta necesidad de validar módulos operativos. & Media (Riesgo de rechazo en entrega final). & \textbf{Alta} (Control por hitos y entregables). & Baja (Dificultad de contratos fijos por Sprints). & \textbf{Modelo Iterativo / Incremental} \\
+			\addlinespace[3pt]
+			\textbf{Escenario 4:} Plataforma de cooperativa de ahorro. & Regulación financiera estricta, alta seguridad, alta concurrencia y despliegue por módulos. & Media (Retrasa validación de transacciones). & \textbf{Alta} (Incrementos modulares y seguros). & Media (Requiere gobierno estricto de cambios). & \textbf{Modelo Iterativo / Incremental} \\
+			\bottomrule
+		\end{tabularx}
+	\end{center}
 	
 	\section{Referencias}
 	\printbibliography[heading=none]
