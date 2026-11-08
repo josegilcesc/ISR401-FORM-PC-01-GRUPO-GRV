@@ -40,7 +40,7 @@
 	\maketitle
 	
 	\begin{abstract}
-		En este informe se formaliza el desarrollo de la actividad grupal \texttt{FORM-PC-01}, cuyo objetivo es comparar los modelos de proceso de ingeniería de requisitos (cascada/secuencial, iterativo/incremental y ágil/Scrum) en cuatro escenarios representativos del entorno profesional. Se definen cinco criterios cuantitativos y cualitativos de selección y se presenta la matriz comparativa correspondiente.
+		En este informe se formaliza el desarrollo de la actividad grupal \texttt{FORM-PC-01}, cuyo objetivo es comparar los modelos de proceso de ingeniería de requisitos (cascada/secuencial, iterativo/incremental y ágil/Scrum) en cuatro escenarios representativos del entorno profesional. Se definen cinco criterios cualitativos de selección, se formula la matriz comparativa y se justifica la elección del modelo para cada escenario. Asimismo, se desglosa el framework de Klaus Pohl sobre el caso municipal de un GAD cantonal.
 	\end{abstract}
 	
 	\section{Criterios de Comparación de Modelos de Proceso}
@@ -75,6 +75,43 @@
 			\bottomrule
 		\end{tabularx}
 	\end{center}
+	
+	\section{Elección Justificada del Modelo por Escenario}
+	
+	\subsection{Escenario 1: Sistema Embebido de Planta Industrial --- Modelo Cascada}
+	\noindent\textbf{Justificación:} Los sistemas embebidos industriales operan acoplados a componentes físicos y circuitos donde las modificaciones tardías representan costos económicos elevados e inviabilidad técnica. La estabilidad de los requisitos de control y la criticidad de la seguridad operacional requieren una etapa de elicitación y especificación completa e inmutable antes de la producción del firmware y hardware \cite{ieee29148}.
+	
+	\subsection{Escenario 2: Aplicación Móvil de Emprendimiento --- Modelo Ágil (Scrum)}
+	\noindent\textbf{Justificación:} Las aplicaciones orientadas a emprendimientos enfrentan una elevada volatilidad en las preferencias de los usuarios finales y requieren acelerar el tiempo de salida al mercado (\emph{time-to-market}). El marco Scrum permite adaptar la pila de producto (\emph{Product Backlog}) al finalizar cada Sprint de 2 a 3 semanas, incorporando métricas reales de uso sin incurrir en reestructuraciones costosas.
+	
+	\subsection{Escenario 3: Sistema de un GAD con Contrato Público --- Modelo Iterativo / Incremental}
+	\noindent\textbf{Justificación:} La contratación pública municipal exige la definición formal de un pliego de condiciones y un presupuesto cerrado. Sin embargo, desarrollar la totalidad del software sin entregas intermedias incrementa el riesgo de no conformidad con los departamentos usuarios (Rentas, Catastro y Financiero). El modelo iterativo concilia la rigidez del contrato con entregas incrementales sujetas a actas de recepción parcial.
+	
+	\subsection{Escenario 4: Plataforma de Cooperativa de Ahorro y Crédito --- Modelo Iterativo / Incremental}
+	\noindent\textbf{Justificación:} Las plataformas financieras exigen un estricto cumplimiento regulatorio y pruebas intensivas de seguridad y penetración. El enfoque incremental permite desplegar módulos transaccionales independientes (ej. consultas, transferencias, créditos) asegurando la estabilidad y auditoría de cada componente antes de abrir su operación al público.
+	
+	\section{Desglose del Framework de Klaus Pohl (Escenario 3: Sistema del GAD)}
+	Se analiza la dinámica del proceso de requisitos aplicando el framework conceptual de Klaus Pohl \cite{pohl2025} sobre el \textbf{Escenario 3} (Sistema de Recaudación Predial y Servicios Municipales para un GAD cantonal con 25\,000 predios).
+	
+	\subsection{Actividades Centrales (\emph{Core Activities})}
+	\begin{enumerate}
+		\item \textbf{Elicitación (\emph{Elicitation}):} En cada iteración, se realizan entrevistas estructuradas y talleres de trabajo con los responsables de Rentas, Catastro y Tesorería para descubrir las reglas de liquidación de impuestos prediales, descuentos por ley y recargos por mora.
+		\item \textbf{Especificación y Documentación (\emph{Documentation}):} Se estructuran los requisitos funcionales bajo la plantilla canónica ISO/IEC/IEEE 29148:2018 y se representan las interacciones mediante diagramas de casos de uso UML en herramientas CASE \cite{ieee29148}.
+		\item \textbf{Negociación y Validación (\emph{Validation \& Negotiation}):} Se llevan a cabo sesiones formales de walkthrough con la Dirección Financiera y Asesoría Jurídica para resolver conflictos entre las expectativas de los usuarios y las restricciones de las ordenanzas municipales.
+	\end{enumerate}
+	
+	\subsection{Actividades Transversales (\emph{Cross-Cutting Activities})}
+	\begin{enumerate}
+		\item \textbf{Gestión de Requisitos (\emph{Requirements Management}):} Administración de la trazabilidad bidireccional mediante matrices de dependencias y control estricto de solicitudes de cambio (\emph{Change Requests}) que afecten la línea base del contrato público.
+		\item \textbf{Gestión del Contexto (\emph{Context Management}):} Monitoreo continuo de las fuentes del entorno: cambios en la normativa tributaria nacional (SRI), actualizaciones de la Ley Orgánica de Protección de Datos Personales (LOPDP \cite{lopdp2021}) e interfaces de la pasarela bancaria local.
+	\end{enumerate}
+	
+	\subsection{Artefactos de Salida (\emph{Output Artifacts})}
+	\begin{enumerate}
+		\item \textbf{Metas (\emph{Goals}):} Reducir el tiempo de atención presencial en ventanilla en un 70\,\% y asegurar la concordancia del 100\,\% de los títulos emitidos con el catastro municipal.
+		\item \textbf{Requisitos Especificados (\emph{Requirements}):} Especificación de requisitos funcionales y requisitos no funcionales cuantificados (disponibilidad del 99,5\,\% y tiempos de respuesta $p95 \le 3$\,s) conforme al modelo ISO/IEC 25010:2023 \cite{iso25010}.
+		\item \textbf{Casos de Uso / Historias de Usuario:} Especificaciones detalladas de escenarios de consulta de deuda, liquidación, pago en línea y emisión de comprobantes electrónicos.
+	\end{enumerate}
 	
 	\section{Referencias}
 	\printbibliography[heading=none]
